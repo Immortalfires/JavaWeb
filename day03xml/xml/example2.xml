@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NEWSPAPER [
+        <!ELEMENT NEWSPAPER (ARTICLE+)>
+        <!ELEMENT ARTICLE (HEADLINE,BYLINE,LEAD,BODY,NOTES)>
+        <!ELEMENT HEADLINE (#PCDATA)>
+        <!ELEMENT BYLINE (#PCDATA)>
+        <!ELEMENT LEAD (#PCDATA)>
+        <!ELEMENT BODY (#PCDATA)>
+        <!ELEMENT NOTES (#PCDATA)>
+
+        <!ATTLIST ARTICLE AUTHOR CDATA #REQUIRED>
+        <!ATTLIST ARTICLE EDITOR CDATA #IMPLIED>
+        <!ATTLIST ARTICLE DATE CDATA #IMPLIED>
+        <!ATTLIST ARTICLE EDITION CDATA #IMPLIED>
+
+        <!ENTITY NEWSPAPERS "Vervet Logic Times">
+        <!ENTITY PUBLISHERS "Vervet Logic Press">
+        <!ENTITY COPYRIGHTS "Copyright 1998 Vervet Logic Press">
+]>
+
+<NEWSPAPER>
+    <ARTICLE AUTHOR="Hay" EDITOR="Roy" DATE="2020-2-17" EDITION="No">
+        <HEADLINE>&NEWSPAPERS;</HEADLINE>
+        <BYLINE>Nice to meet you guys!</BYLINE>
+        <LEAD>&PUBLISHERS;</LEAD>
+        <BODY>Glad to see you.You are an excellent warden!</BODY>
+        <NOTES>&COPYRIGHTS;</NOTES>
+    </ARTICLE>
+</NEWSPAPER>

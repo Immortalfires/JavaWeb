@@ -1,0 +1,43 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/16  13:27-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form id="form1">
+        <input type="text" name="username"/>
+        <br/>
+        <input type="button" value="提交" onclick="form1()"/>
+    </form>
+    <br/>
+    <a href="hello.html?username=ahhaha">提交</a>
+    <hr/>
+    <input id="input1" type="text" name="text1" value="please input" onfocus="focus1();" onblur="onblur1();"/>
+</body>
+    <script type="text/javascript">
+        function form1(){
+            //获取form表单
+            var form1 = document.getElementById("form1");
+            //设置action 提交页面
+            form1.action="hello.html";
+            //执行提交
+            form1.submit();
+        }
+
+        //得到焦点
+        function focus1(){
+            var input1 = document.getElementById("input1");
+            input1.value="";
+        }
+
+        //得到焦点
+        function onblur1(){
+            var input1 = document.getElementById("input1");
+            input1.value="please input";
+        }
+    </script>
+</html>

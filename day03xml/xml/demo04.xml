@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.Aurevoir/20200217"
+    xsi:schemaLocation="http://www.Aurevoir/20200217 1.xsd"
+p1="s">
+    <name>Red</name>
+    <age>50</age>
+</person>

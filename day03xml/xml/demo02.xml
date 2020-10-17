@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE person [
+        <!ELEMENT person (name|age|sex|school|birth|friend)*>
+        <!ELEMENT name (#PCDATA)>
+        <!ATTLIST name
+                ID3 ID #REQUIRED>
+
+        <!ELEMENT age (#PCDATA)>
+        <!ATTLIST age
+                ID2 (AA|BB|CC|DD) #REQUIRED>
+
+        <!ELEMENT sex (#PCDATA)>
+        <!ATTLIST sex
+                ID4 CDATA #IMPLIED>
+
+        <!ELEMENT school (#PCDATA)>
+        <!ATTLIST school
+                ID5 CDATA #FIXED "seniorHigh">
+
+        <!ELEMENT birth (#PCDATA)>
+        <!ATTLIST birth
+                ID1 CDATA #REQUIRED>
+
+        <!ELEMENT friend (#PCDATA)>
+        <!ATTLIST friend
+                ID6 CDATA "x">
+
+        <!--实体定义-->
+        <!ENTITY TEST "Copyright to xxx">
+        ]>
+
+<person>
+    <name ID3="ad">Alex Piper</name>
+    <age ID2="AA">34</age>
+<!--    <sex>female</sex>-->
+    <school ID5="seniorHigh">who knows</school>
+    <birth ID1="birthday">1986.3.2</birth>
+    <friend>&TEST;</friend>
+</person>

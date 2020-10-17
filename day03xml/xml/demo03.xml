@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><person>
+    <p1>
+        <name>Alex</name>
+        <age>36</age>
+        <sex>female</sex>
+    </p1>
+    <p2>
+        <name>Piper</name>
+        <age>32</age>
+        <sex>female</sex>
+    </p2>
+</person>
+<!--见jaxp文件夹-->
+<!--1.xsd用于约束-->

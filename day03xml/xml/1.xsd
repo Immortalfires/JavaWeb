@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.Aurevoir/20200217"
+        elementFormDefault="qualified">
+    <element name="person">
+        <complexType>
+            <sequence>
+<!--            <all>-->
+<!--            <choice>-->
+                <element name="name" type="string" maxOccurs="unbounded"/>
+                <element name="age" type="int"/>
+<!--            </choice>-->
+<!--            </all>-->
+            </sequence>
+            <attribute name="p1" type="string" use="required"/>
+        </complexType>
+    </element>
+</schema>
