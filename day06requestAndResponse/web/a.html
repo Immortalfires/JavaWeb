@@ -1,0 +1,23 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/4/6  15:38-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>测试请求参数</h1>
+    <hr/>
+    <a href="/day06requestAndResponse/K?xxx=XXX&yyy=YYY">点击这里</a>
+    <form action="/day06requestAndResponse/K" method="post">
+        username:<input type="text" name="username"/><br/>
+        password:<input type="password" name="password"/><br/>
+        hobby:<input type="checkbox" name="hobby" value="eat">eat
+        <input type="checkbox" name="hobby" value="sleep">sleep
+        <input type="checkbox" name="hobby" value="play">play
+        <input type="submit" value="提交"/>
+    </form>
+</body>
+</html>
