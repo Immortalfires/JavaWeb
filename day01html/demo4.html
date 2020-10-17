@@ -1,0 +1,54 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/7  20:15-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--八、表单标签-->
+<!--属性：action：数据提交的地址 默认为当前页面
+          method：提交方式 get(提交显示参数 安全级别低 有数据大小限制) post（提交不显示参数 在请求体内 安全级别高 无数据大小限制）
+          enctype：一般不需要  文件上传需要设置该属性-->
+<form action="example01.html">
+    手机号码：<input type="text" name="phoneNumber"/><br/>
+    创建密码：<input type="password" name="password"/><br/>
+    姓名：<input type="text" name="name"/><br/>
+<!--单选输入项 需要属性name切属性值必须相同   checked="checked" 默认选中-->
+    性别：<input type="radio" name="sex" value="female" checked="checked"/>女<input type="radio" name="sex" value="male"/>男<br/>
+<!--多选选输入项 需要属性name切属性值必须相同-->
+    爱好：<input type="checkbox" name="hobby" value="badminton"/>羽毛球<input type="checkbox" name="hobby" value="ping"/>乒乓球
+            <input type="checkbox" name="hobby" value="basketball" checked="checked"/>篮球<input type="checkbox" name="hobby" value="baseball"/>排球<br/>
+<!--文件输入项-->
+    文件：<input type="file" name="file"/><br/>
+<!--下拉输入项-->
+    生日：
+<!--selected="selected" 默认选择-->
+    <select name="birth">
+        <option value="0">请选择</option>
+        <option value="1991">1991</option>
+        <option value="1992" selected="selected">1992</option>
+        <option value="1993">1993</option>
+    </select>
+    年
+    <br/>
+<!--文本域-->
+    自我描述：<textarea name="selfDescription" cols="10" rows="20"></textarea><br/>
+<!--隐藏项-->
+    隐藏项：<input type="hidden" name="hid"/><br/>
+<!--提交按钮-->
+    <input type="submit" value="click"/>
+<!--图片做提交按钮-->
+    <input  type="image" src="header.jpg"/><br/>
+<!--重置按钮-->
+    <input type="reset" value="reset"/><br/>
+<!--普通按钮-->
+    <input type="button" value="normal"/><br/>
+</form>
+
+
+</body>
+</html>
