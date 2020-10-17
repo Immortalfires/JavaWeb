@@ -1,0 +1,30 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/11  20:29-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="back" onclick="back1()"/>
+    <input type="button" value="next" onclick="next1()"/>
+    BBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    <a href="2.html">BBBBBBB</a>
+
+    <script type="text/javascript">
+        function back1() {
+            //example1.html
+            // history.back();
+            history.go(-1);
+        }
+        function next1() {
+            //2.html
+            // history.forward();
+            history.go(1);
+        }
+    </script>
+
+</body>
+</html>

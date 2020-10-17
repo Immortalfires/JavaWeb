@@ -1,0 +1,46 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/11  20:55-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+</head>
+<body>
+    <input type="text" id="nameId1" value="1" name="text1"/><br/>
+    <input type="text" id="nameId2" value="2" name="text1"/><br/>
+    <input type="text" id="nameId3" value="3" name="text1"/><br/>
+    <input type="text" id="nameId4" value="4" name="text1"/><br/>
+
+    <script type="text/javascript">
+        var str = "bad";
+        //1. write方法
+        document.write("write方法输出变量：" + str + "<br/>");
+        document.write("write方法输出html代码：" + "<br/>" +"<hr/>");
+        //2. getElementById() 通过id得到元素（标签）
+        var input1 = document.getElementById("nameId1");
+        document.write("name："+ input1.name + "<br/>");   //得到input1对象的name属性
+        input1.value = "left";    //复制input1对象的value
+        //3.getElementsByName()  通过name得到对象集合
+        var inputArr = document.getElementsByName("text1");
+        document.write("length of inputArr："+ inputArr.length + "<br/>");
+        document.write("inputArr.value：");
+        for(var i=0;i<inputArr.length;i++){
+            var input = inputArr[i];
+            document.write(input.value + "、");
+        }
+        document.write("<hr/>");
+        //4.getElementsByTagName() 通过标签名称得到对象集合
+        var inputArr2 = document.getElementsByTagName("input");
+        document.write("length of inputArr："+ inputArr.length + "<br/>");
+        for(var i=0;i<inputArr.length;i++){
+            var input = inputArr[i];
+            document.write(input.value + "、");
+        }
+        document.write("<hr/>");
+
+
+    </script>
+</body>
+</html>

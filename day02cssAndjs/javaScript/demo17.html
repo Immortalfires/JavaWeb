@@ -1,0 +1,111 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/14  13:56-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM树的操作</title>
+    <style type="text/css">
+        #div1{
+            width: 200px;
+            height: 150px;
+            border: 5px solid blue;
+        }
+        #div2{
+            width: 250px;
+            height: 150px;
+            border: 5px dashed darkorange;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <ul id="ulId1">
+            <li id="li1">Alex</li>
+            <li id="li2">Chapman</li>
+            <li id="li3">Larry</li>
+        </ul>
+    </div>
+    <div id="div2">
+
+    </div>
+    <input type="button" value="剪切至div2" onclick="addLi();"/><br/>
+    <input type="button" value="插入新人物" onclick="insert();"/><br/>
+    <input type="button" value="删除最后一个人物" onclick="deleteLast();"/><br/>
+    <input type="button" value="替换人物" onclick="replaceRole();"/><br/>
+    <input type="button" value="复制列表到div2" onclick="copyPaste();"/><br/>
+
+    <script type="text/javascript">
+        //appendChild()
+        function addLi(){
+            var div2 = document.getElementById("div2");
+            var ul1 = document.getElementById("ulId1");
+            div2.appendChild(ul1);
+        }
+
+        //insertBefore(newNode,oldNode)
+        function insert() {
+            // 在<li>Chapman</li>之前加入Joe
+            /*
+            1. 获取<li>Chapman</li>
+            2. 创建<li>标签
+            3. 创建文本
+            4. 将文本加入<li>
+            5. 获取ul
+            6.添加li至ul下 在<li>Chapman</li>之前加入Joe
+             */
+            var li2 = document.getElementById("li2");
+            var li4 = document.createElement("li");
+            var text4 = document.createTextNode("Joe");
+            li4.appendChild(text4);
+            var ul = document.getElementById("ulId1");
+            ul.insertBefore(li4,li2);
+        }
+
+        //removeChild(node)
+        function deleteLast() {
+            /*
+            1. 获取li
+            2. 获取li父节点ul
+            3. 通过父节点删除
+             */
+            var li = document.getElementById("li3");
+            // var ul = li.parentNode;
+             var ul = document.getElementById("ulId1");
+            ul.removeChild(li);
+        }
+
+        //replaceChild(newNode,oldNode)
+        function replaceRole() {
+            /*将<li id="li3">Larry</li>替换为Cathy
+            1. 获取li3
+            2. 创建标签li
+            3. 创建文本
+            4. 将文本添加到li下
+            5. 获取li3父节点
+            6. 替换操作
+             */
+            var li3 = document.getElementById("li3");
+            var li4 = document.createElement("li");
+            var text = document.createTextNode("Cathy");
+            li4.appendChild(text);
+            var ul = li3.parentNode;
+            ul.replaceChild(li4,li3);
+        }
+
+        //cloneNode(boolean)
+        function copyPaste(){
+            /*  将div1的内容复制到div2内
+            1. 获取ul
+            2. 复制操作
+            3. 放入div2 获取div2 再appendChild()
+             */
+            var ul = document.getElementById("ulId1");
+            var div2 = document.getElementById("div2");
+            var ulCpoy = ul.cloneNode(true);
+            div2.appendChild(ulCpoy);
+        }
+    </script>
+</body>
+</html>

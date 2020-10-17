@@ -1,0 +1,36 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/14  20:07-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态生成表格</title>
+</head>
+<body>
+    行：<input type="text" id="rows"/>
+    列：<input type="text" id="cols"/><br/>
+    <input type="button" value="生成" onclick="generateForm()"/>
+    <hr/>
+    <div id="form">
+
+    </div>
+</body>
+    <script type="text/javascript">
+        function generateForm() {
+            var row = document.getElementById("rows").value;
+            var col = document.getElementById("cols").value;
+            var div = document.getElementById("form");
+            var str ="<table border='1' cellspacing='0' bordercolor='orange'>";
+            for(var i=0;i<row;i++){
+                str +="<tr>";
+                for(var j=0;j<col;j++){
+                    str += "<td>right</td>";
+                }
+                str +="</tr>";
+            }
+            str += "</table>";
+            div.innerHTML = str;
+        }
+    </script>
+</html>

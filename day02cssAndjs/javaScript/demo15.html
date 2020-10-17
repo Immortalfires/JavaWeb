@@ -1,0 +1,42 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/12  14:07-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element对象</title>
+</head>
+<body>
+    <input type="text" id="textId1" value="middle"/><br/>
+
+    <ul id="ulId1">
+        <li>No1</li>
+        <li>No2</li>
+        <li>No3</li>
+    </ul>
+</body>
+<script type="text/javascript">
+    // 1. 获取属性值
+    // 先获取到input标签  再获取属性值
+    var input1 = document.getElementById("textId1");
+    document.write("input1.value：" + input1.value + "<br/>");
+    document.write("input1.id：" + input1.getAttribute("id") + "<br/>");
+    document.write("input1.class：" + input1.getAttribute("class") + "<br/>");
+    //2. 设置属性值
+    input1.setAttribute("class","mine");
+    document.write("input1.class：" + input1.getAttribute("class") + "<br/>");
+    //3. 删除属性值 (无法删除value属性值)
+    input1.removeAttribute("class");
+    document.write("input1.class：" + input1.getAttribute("class") + "<br/>");
+
+    //4. 获取标签下的子标签
+    //获取到ul下面的所有子标签
+    var ul = document.getElementById("ulId1");
+    // var lis = ul.childNodes;
+    // //浏览器兼容性差
+    // document.write("lis.length：" + lis.length + "<br/>");
+    var lis = ul.getElementsByTagName("li");
+    document.write("<hr/>"+ "lis.length：" + lis.length + "<br/>");
+</script>
+</html>

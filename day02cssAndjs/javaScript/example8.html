@@ -1,0 +1,60 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/14  18:50-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项联动</title>
+</head>
+<body>
+    <!--改变事件onchange-->
+    <select id="country" onchange="changeCapital(this.value)">
+        <option value="0">--请选择--</option>
+        <option value="中国">中国</option>
+        <option value="日本">日本</option>
+        <option value="韩国">韩国</option>
+        <option value="美国">美国</option>
+    </select>
+
+    <select id="city">
+
+    </select>
+
+
+</body>
+    <script type="text/javascript">
+        //定义数组存储数据
+        var arr = new Array(4);
+        arr[0] = ["中国","北京","南京","西安","上海","厦门","成都","石家庄"];
+        arr[1] = ["日本","东京","神户","名古屋","札幌","大阪","横滨","广岛"];
+        arr[2] = ["韩国","首尔","釜山","仁川","蔚山","大邱","大田","光州"];
+        arr[3] = ["美国","华盛顿","纽约","亚特兰大","波士顿","芝加哥","休斯顿","费城"];
+        function changeCapital(val) {
+            /*
+            遍历数组并比较，如相同，则获取到第一个值后面的所有值
+            得到city的select 添加appendChild
+             */
+            var selectCity = document.getElementById("city");
+            //由于每次都要追加 第二次会出错
+            var options = selectCity.getElementsByTagName("option");
+            for(var k=0;k<options.length;k++){
+                var opt = options[k];
+                selectCity.removeChild(opt);
+                k--;
+            }
+            for(var i=0;i<arr.length;i++){
+                var arr1 = arr[i];
+                if(arr1[0] === val){
+                    for(var j=1;j<arr1.length;j++){
+                        var value = arr1[j];
+                        var option1 = document.createElement("option");
+                        var text = document.createTextNode(value);
+                        option1.appendChild(text);
+                        selectCity.appendChild(option1);
+                    }
+                }
+            }
+        }
+    </script>
+</html>

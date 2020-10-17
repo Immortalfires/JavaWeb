@@ -1,0 +1,57 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/11  19:36-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM对象</title>
+</head>
+<body>
+    <input type="button" value="jump" onclick="href1();"/>
+    <input type="button" value="happy spring" onclick="bili();"/>
+    <input type="button" value="Interval" onclick="clearInterval1()"/>
+    <input type="button" value="Timeout" onclick="clearTimeout1()"/>
+
+    <hr/>
+    <script type="text/javascript">
+        //Navigator对象的属性
+        document.write("浏览器名称："+navigator.appName+"<br/>");
+        //Screen对象的属性
+        document.write("screen width："+screen.width+"<br/>");
+        document.write("screen height："+screen.height+"<br/>");
+        //Location对象的属性 获取到请求的url地址，也可以设置url地址
+        document.write("href：" + location.href + "<br/>");
+
+        function href1(){
+            location.href = "https://www.bilibili.com";
+        }
+        //History对象的属性 见history.html
+        //Window对象的属性 方法
+        var flag = confirm("确认是否删除");   //消息确认框
+        if(flag === true){
+            alert("删除成功");   //消息弹出框
+        }else {
+            alert("删除失败");
+        }
+
+        prompt("please input...","0"); //输入框
+
+        function bili(){
+            window.open("https://www.bilibili.com","快乐源泉");  //打开新窗口
+        }
+
+        // window.close();  //关闭窗口
+
+        //做定时器 setInterval("js代码","毫秒数")  setTimeout()
+        var id1 = setInterval("alert('333')",3000); //每3秒 alert
+        var id2 = setTimeout("confirm('right?')",2000); //10秒后 只执行一次
+        function clearInterval1() {
+            clearInterval(id1);
+        }//清除setInterval()
+        function clearTimeout1() {
+            clearTimeout(id2);
+        }//清除setTimeout()
+    </script>
+</body>
+</html>

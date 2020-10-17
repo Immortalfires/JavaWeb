@@ -1,0 +1,31 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/11  14:25-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array对象</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var arr = [1 ,"right" , false ,4 ,"right" ,true];
+        var arr2 = [434,"slice"];
+        document.write("arr的长度：" + arr.length + "<br/>");
+        document.write("原数组arr：" + arr + "<br/>");
+        document.write("数组连接concat()："+ arr.concat(arr2) + "<br/>");
+        document.write("数组的所有元素放入一个字符串join()：" + arr.join("-") + "<br/>");
+        document.write("删除并返回数组的最后一个元素pop()：" + arr.pop() + "<br/>");
+        document.write("向数组的末尾添加一个或更多元素，并返回新的长度push()：" + arr.push("haha","new",3) + "<br/>");
+        document.write("数组颠倒reverse()：" + arr.reverse()+"<br/>");
+        document.write("删除并返回数组的第一个元素shift()："+arr.shift()+"<br/>");
+        document.write("返回选定元素slice()："+arr.slice(0,4)+"<br/>");
+        document.write("排序sort()：" + arr.sort() + "<br/>");
+        document.write("删除 添加splice()：" + arr.splice(2,3) + "<br/>");
+        document.write("向开头添加一个或多个元素 返回新的长度 unshift()："+arr.unshift("df",3) + "<br/>");
+
+
+    </script>
+
+</body>
+</html>

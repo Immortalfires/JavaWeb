@@ -1,0 +1,42 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/10  15:07-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String对象</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var string = "To be or not to be , that's a question.";
+        //length属性
+        document.write(string.length + "<hr/>");
+        document.write("原始：" + string +"<br/>");
+        //与HTML相关的方法
+        document.write("大字号：" + string.big() + "<br/>");
+        document.write("加粗：" + string.bold()  +"<br/>");
+        document.write("变颜色：" + string.fontcolor("orange") + "<br/>");
+        document.write("改变字体尺寸：" + string.fontsize(5) + "<br/>");
+        document.write("小字号：" + string.small() + "<br/>");
+        document.write("斜体：" + string.italics()  + "<br/>");
+        document.write("超链接：" + string.link("https://blog.csdn.net/qq_43598179") + "<br/>");
+        document.write("删除线：" + string.strike() + "<br/>");
+        document.write("上标：" + string.sup() + "<br/>");
+        document.write("下标：" + string.sub() + "<br/>" + "<hr/>");
+        //与java相似的方法
+        document.write("charAt(3)：" + string.charAt(3) + "<br/>");
+        document.write("charCodeAt(3)：" + string.charCodeAt(3) + "<br/>");
+        document.write("concat( )：" + string.concat("Who knows!") + "<br/>");
+        document.write("fromCharCode(72,69,76,76,79)：" + String.fromCharCode(72,69,76,76,79) + "<br/>");
+        document.write("indexOf('o')：" + string.indexOf("o") + "<br/>");
+        document.write("lastIndexOf('o')：" + string.lastIndexOf("o") + "<br/>");
+        document.write("split()：" + string.split(" ") + "<br/>");
+        document.write("replace()：" + string.replace("be","haha") + "<br/>");
+        document.write("substr()：" + string.substr(3) + "<br/>");
+        document.write("substring()：" + string.substring(2,5) + "<br/>");
+        document.write("toLowerCase()：" + string.toLowerCase() + "<br/>");
+        document.write("toUpperCase()：" + string.toUpperCase() + "<br/>");
+    </script>
+</body>
+</html>

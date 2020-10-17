@@ -1,0 +1,45 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/10  14:02-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //创建函数 方法一
+        function test() {
+            document.write("hahaha" + "<br/>");
+        }
+        test();
+
+        function add1(a,b){
+            var num = a + b;
+            document.write(num + "<br/>");
+        }
+        add1(4,5);
+
+        function add2(a,b,c) {
+            var num = a + b + c;
+            return num;
+        }
+        document.write(add2(32,4,3) + "<br/>");
+        document.write("<hr/>");
+
+        //创建函数 方法二
+        var func = function (a,b) {
+            document.write(a + b + "<br/>");
+        };
+        func(5,2);
+        document.write("<hr/>");
+
+        //创建函数 方法三
+        var canshu = "a,b";
+        var bodyFunc= "document.write(a + b + '<br/>');";
+        var add3 = new Function(canshu,bodyFunc);
+        add3(2,3);
+    </script>
+</body>
+</html>

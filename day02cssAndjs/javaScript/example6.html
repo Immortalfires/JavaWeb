@@ -1,0 +1,77 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/14  15:29-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选练习</title>
+</head>
+<body>
+    <input type="checkbox" id="boxId" onclick="allOrOff();"/>全选/全不选<br/>
+    <input type="checkbox" name="love"/>篮球<br/>
+    <input type="checkbox" name="love"/>足球<br/>
+    <input type="checkbox" name="love"/>排球<br/>
+    <input type="checkbox" name="love"/>冰球<br/>
+    <input type="button" value="全选" onclick="allChoose();"/>
+    <input type="button" value="全不选" onclick="offChoose();"/>
+    <input type="button" value="反选" onclick="reverseChoose();"/>
+
+    <script type="text/javascript">
+        //复选框 全选/全不选
+        function allOrOff() {
+            /*
+                1. 获取要操作的复选框
+                2. 设置checked属性
+             */
+            var check = document.getElementById("boxId");
+            if(check.checked === true){
+                allChoose();
+            }else{
+                offChoose();
+            }
+        }
+        
+        //全选
+        function allChoose() {
+            /*
+                1. 获取要操作的复选框
+                2. 设置checked属性
+             */
+            var check = document.getElementsByName("love");
+            for(var i=0;i<check.length;i++){
+                check[i].checked = true;
+            }
+        }
+
+        //全不选
+        function offChoose() {
+            /*
+                1. 获取要操作的复选框
+                2. 设置checked属性
+             */
+            var check = document.getElementsByName("love");
+            for(var i=0;i<check.length;i++){
+                check[i].checked = false;
+            }
+        }
+
+        //反选
+        function reverseChoose(){
+            /*
+                1. 获取要操作的复选框
+                2. 设置checked属性
+             */
+            var check = document.getElementsByName("love");
+            for(var i=0;i<check.length;i++){
+                if(check[i].checked === false){
+                    check[i].checked = true;
+                }else{
+                    check[i].checked = false;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

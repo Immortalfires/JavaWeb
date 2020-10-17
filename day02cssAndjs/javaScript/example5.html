@@ -1,0 +1,30 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/14  15:19-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态显示时间</title>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script type="text/javascript">
+        function getDate() {
+            /*
+                1. 得到当前时间
+                2. 需要让页面每一秒获取时间
+                3. 每一秒写一次
+            */
+            var date = new Date();
+            var time = date.toLocaleString();
+            var div1 = document.getElementById("div1");
+            div1.innerHTML = time;
+        }
+        setInterval("getDate()",1000);
+    </script>
+
+</body>
+</html>

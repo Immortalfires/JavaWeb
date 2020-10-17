@@ -1,0 +1,50 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/12  15:58-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node对象</title>
+</head>
+<body>
+    <span id="spanId">左左右右</span><hr/>
+    <ul id="ulId">
+        <li id="l1">hahaha</li>
+        <li id="l2">lilili</li>
+        <li id="l3">hehehe</li>
+        <li id="l4">eeeeee</li>
+    </ul>
+    <hr/>
+</body>
+<script type="text/javascript">
+    var span1 = document.getElementById("spanId");//获取元素节点
+    document.write("<br/>"+ "nodeName："+ span1.nodeName + "<br/>");//SPAN
+    document.write("nodeType："+ span1.nodeType + "<br/>");  //1
+    document.write("nodeValue："+ span1.nodeValue + "<br/>");//null
+
+    var id1 = span1.getAttributeNode("id");  //获取属性节点
+    document.write("idName：" + id1.nodeName + "<br/>"); //id
+    document.write("idType：" + id1.nodeType + "<br/>"); //2
+    document.write("idValue：" + id1.nodeValue + "<br/>"); //spanId
+
+    var text1 = span1.firstChild; //获取文本节点
+    document.write("textName："+ text1.nodeName + "<br/>"); //#text
+    document.write("textType："+ text1.nodeType + "<br/>"); //3
+    document.write("textValue："+ text1.nodeValue + "<br/>");//左左右右
+
+    //得到父节点
+    var li1 = document.getElementById("li1");
+    var ul1 = li1.parentNode;
+    document.write("ul1.id：" + ul1.id+"<br/>");
+    //得到子节点
+    var ul2 = document.getElementById("ulId");
+    var li4 = ul2.lastChild;
+    document.write("li4.id：" +li4.getAttribute("id")+ "<br/>");
+    //同辈节点
+    var li3 = document.getElementById("li3");
+    var li2 = li3.nextSibling;
+
+
+</script>
+</html>

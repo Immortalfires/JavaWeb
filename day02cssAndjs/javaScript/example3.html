@@ -1,0 +1,42 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/12  13:20-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+    <table border="1" bordercolor="orange">
+        <tr>
+            <th>操作</th>
+            <th>编号</th>
+            <th>姓名</th>
+        </tr>
+        <tr align="center">
+            <td><input type="button" id="4" name="button" value="选择" onclick="copy('001','Alice')"/></td>
+            <td>001</td>
+            <td>Alice</td>
+        </tr>
+        <tr align="center">
+            <td><input type="button" id="5" name="button" value="选择" onclick="copy('002','Roby')"/></td>
+            <td>002</td>
+            <td>Roby</td>
+        </tr>
+        <tr align="center">
+            <td><input type="button" id="6" name="button" value="选择" onclick="copy('003','William')"/></td>
+            <td>003</td>
+            <td>William</td>
+        </tr>
+    </table>
+</body>
+    <script type="text/javascript">
+        function copy(num,name){
+            var wd = window.opener;
+            wd.document.getElementById("1").value = num;
+            wd.document.getElementById("2").value = name;
+            window.close();
+        }
+    </script>
+</html>

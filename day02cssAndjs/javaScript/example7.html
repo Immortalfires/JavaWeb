@@ -1,0 +1,95 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/14  15:49-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉列表左右选择</title>
+</head>
+<body>
+    <div id="div1" style="float: left">
+        <div>
+            <!--multiple 可实现按住ctrl多选-->
+            <select id="select1" multiple="multiple" style="height: 200px ;width: 100px">
+                <option>选项1</option>
+                <option>选项2</option>
+                <option>选项3</option>
+                <option>选项4</option>
+                <option>选项5</option>
+                <option>选项6</option>
+                <option>选项7</option>
+            </select><br/>
+        </div>
+        <div>
+            <input type="button" value="选中添加到右边>>" onclick="selectToRight()"/><br/>
+            <input type="button" value="全部添加到右边>>" onclick="allToRight()"/>
+        </div>
+    </div>
+    <div id="div2">
+        <div>
+            <select id="select2" multiple="multiple" style="height: 200px ;width: 100px">
+                <option>选项8</option>
+            </select><br/>
+        </div>
+        <div>
+            <input type="button" value="选中添加到左边<<" onclick="selectToLeft()"/><br/>
+            <input type="button" value="全部添加到左边<<" onclick="allToLeft()"/>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function selectToRight(){
+            /*
+                1. 获取内容 判断选中selected
+                2. 得到后 appendChild()
+             */
+            var select1 = document.getElementById("select1");
+            var options1 = select1.getElementsByTagName("option");
+            var select2 = document.getElementById("select2");
+            for(var i=0;i<options1.length;i++){
+                var option1 = options1[i];
+                if(option1.selected === true){
+                    select2.appendChild(option1);
+                    i--;
+                }
+            }
+        }
+
+        function allToRight() {
+            var select1 = document.getElementById("select1");
+            var options1 = select1.getElementsByTagName("option");
+            var select2 = document.getElementById("select2");
+            for(var i=0;i<options1.length;i++){
+                var option1 = options1[i];
+                select2.appendChild(option1);
+                i--;
+            }
+        }
+
+        function selectToLeft() {
+            var select2 = document.getElementById("select2");
+            var options1 = select2.getElementsByTagName("option");
+            var select1 = document.getElementById("select1");
+            for(var i=0;i<options1.length;i++){
+                var option1 = options1[i];
+                if(option1.selected === true){
+                    select1.appendChild(option1);
+                    i--;
+                }
+            }
+        }
+
+        function allToLeft(){
+            var select2 = document.getElementById("select2");
+            var options1 = select2.getElementsByTagName("option");
+            var select1 = document.getElementById("select1");
+            for(var i=0;i<options1.length;i++){
+                var option1 = options1[i];
+                select1.appendChild(option1);
+                i--;
+            }
+        }
+    </script>
+</body>
+</html>

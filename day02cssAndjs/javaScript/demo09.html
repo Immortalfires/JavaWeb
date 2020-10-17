@@ -1,0 +1,28 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/11  14:47-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //获取当前时间
+        var date = new Date();
+        document.write(date + "<br/>");
+        document.write(date.toLocaleString() + "<br/>");
+        document.write("返回年份："+date.getFullYear() + "<br/>");
+        document.write("返回月份："+(date.getMonth()+1) + "<br/>");
+        document.write("返回日期："+date.getDate() + "<br/>");
+        document.write("返回周几："+date.getDay() + "<br/>");
+        document.write("返回小时："+date.getHours() + "<br/>");
+        document.write("返回分钟："+date.getMinutes() + "<br/>");
+        document.write("返回秒数："+date.getSeconds() + "<br/>");
+        document.write("返回毫秒："+date.getMilliseconds() + "<br/>");
+        document.write("返回1970 年 1 月 1 日至今的毫秒数："+date.getTime() + "<br/>");
+    </script>
+
+</body>
+</html>

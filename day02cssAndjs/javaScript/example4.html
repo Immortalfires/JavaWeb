@@ -1,0 +1,39 @@
+<!--@author:Aurevoir-->
+<!--@date:  2020/2/12  13:38-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>末尾添加节点</title>
+</head>
+<body>
+    <ul id="ulId">
+        <li>No1</li>
+        <li>No2</li>
+        <li>No3</li>
+        <li>No4</li>
+    </ul>
+    <br/>
+    <input type="button" value="add" onclick="add1();"/>
+</body>
+    <script type="text/javascript">
+        /*
+        向结尾添加节点
+        根据html的层级结构，在添加时，先增加一个<li>
+        在创建文本，将文本加入li内，再将新的<li>加至<ul>下
+         */
+        function add1(){
+            //获取ul标签
+            var ulObj = document.getElementById("ulId");
+            //创建标签
+            var newLi = document.createElement("li");
+            //创建文本
+            var text1 = document.createTextNode("No5");
+            // 将文本加入li内
+            newLi.appendChild(text1);
+            // 新的<li>加至<ul>下
+            ulObj.appendChild(newLi);
+        }
+    </script>
+</html>
