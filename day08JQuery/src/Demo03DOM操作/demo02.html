@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../JQuery/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            // name        获取属性值
+            // alert($(":checkbox").first().attr("checked"));
+            // properties  设置/添加属性值
+            // alert($(":checkbox").eq(1).attr({id:"cb1"}));
+            // alert($(":checkbox").first().attr({name:"4"}));
+            // key,value   设置属性值
+            // alert($(":checkbox").last().attr("value","lastOne"));
+            // key function   把type的值设置为value的值
+            // $(":checkbox").last().attr("value",function () {
+            //     return this.type;
+            // })
+
+            // name  获取属性值   e·g:选中复选框为true，没选中为false
+            // alert($(":checkbox:first").prop("checked"))
+            // properties   e·g:禁用页面上的所有复选框
+            // $(":checkbox").prop({
+            //     disabled: true
+            // })
+            // key value   e·g:选中所有页面上的复选框。
+            // $(":checkbox").prop("checked", true);
+            // key 回调函数   设置复选框全选中
+            $(":checkbox").prop("checked",function (i,val) {
+                return true;
+            })
+        });
+
+    </script>
+</head>
+<body>
+    多选：
+    <input name="1" type="checkbox" value="checkbox1" checked="checked"/>checkbox1
+    <input name="2" type="checkbox" value="checkbox2" />checkbox2
+    <input name="3" type="checkbox" value="checkbox3" />checkbox3
+</body>
+</html>
