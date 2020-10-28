@@ -115,3 +115,141 @@
 1. request.getSession()方法，获取Cookie中的JSESSIONID（唯一）
 2. 只在第一次获取session时才会创建session
 
+## 四、EL表达式
+
+> day07jsp/web/EL表达式
+
+### (一)简介
+
+1. expression language，表达式语言
+2. 作用：替代jsp页面中的表达式脚本，进行数据输出，为了简洁。
+
+### (二)四个域中的顺序问题
+
+> pageContext、session、application、request四个域
+
+1. pageContext
+2. request
+3. session
+4. application
+
+### (三)JavaBean中的属性（person.jsp）
+
+### (四)运算
+
+1. 关系运算
+
+   | 关系运算符 | 说明     | 范例     | 结果  |
+   | ---------- | -------- | -------- | ----- |
+   | ==或eq     | 等于     | ${5==5}  | true  |
+   | !=或ne     | 不等于   | ${5!=5}  | false |
+   | <或lt      | 小于     | ${3<5}   | true  |
+   | \>或gt     | 大于     | ${2>10}  | false |
+   | <=或le     | 小于等于 | ${5<=12} | true  |
+   | \>=或ge    | 大于等于 | ${3>=5}  | false |
+
+2. 逻辑运算
+
+   | 逻辑运算符 | 说明     | 范例               | 结果  |
+   | ---------- | -------- | ------------------ | ----- |
+   | &&或and    | 与运算   | ${12==12&&12<11}   | false |
+   | \|\| 或 or | 或运算   | ${12==12\|\|12<11} | true  |
+   | ! 或 not   | 取反运算 | ${!true}           | false |
+   
+3. 算术运算
+
+   | 算术运算符 | 说明 | 范例      | 结果 |
+   | ---------- | ---- | --------- | ---- |
+   | +          | 加法 | ${12+18}  | 30   |
+   | -          | 减法 | ${18-8}   | 10   |
+   | *          | 乘法 | ${12*12}  | 144  |
+   | /或div     | 除法 | ${144/12} | 12   |
+   | %或mod     | 取模 | ${144%10} | 14.4 |
+
+4. empty运算
+
+   用于判断一个数据是否为空，若为空，输出true，不为空输出false
+
+   >1. 值为null，为空
+   >2. 值为空串，为空
+   >3. 值是Object类型数组，长度为0
+   >4. list集合，长度为0
+   >5. map集合，长度为0
+
+5. 三元运算
+
+   表达式1？表达式2：表达式 3
+
+   > 如果 表达式1为真，返回2；如果为假，返回3
+
+6. 点运算以及中括号运算
+
+   "."运算，可以输出bean对象中某个属性的值
+
+   "[]"运算，可与输出有序集合中某个元素的值，还可以输出map集合中key含有特殊字符的key的值
+
+### (五)11个隐含对象
+
+> web/EL表达式 /duixiang.jsp
+
+| 变量             | 类型                 | 作用                                               |
+| ---------------- | -------------------- | -------------------------------------------------- |
+| pageContext      | PageContextImpl      | 它可以获取 jsp 中的九大内置对象                    |
+| pageScope        | Map<String,Object>   | 它可以获取 pageContext 域中的数据                  |
+| requestScope     | Map<String,Object>   | 它可以获取 Request 域中的数据                      |
+| sessionScope     | Map<String,Object>   | 它可以获取 Session 域中的数据                      |
+| applicationScope | Map<String,Object>   | 它可以获取 ServletContext 域中的数据               |
+| param            | Map<String,String>   | 它可以获取请求参数的值                             |
+| paramValues      | Map<String,String[]> | 它可以获取请求参数的值，获取多个值                 |
+| header           | Map<String,String>   | 它可以获取请求头的信息                             |
+| headerValues     | Map<String,String[]> | 它可以获取请求头的信息，获取多个值                 |
+| cookie           | Map<String,Cookie>   | 它可以获取当前请求的 Cookie 信息                   |
+| initParam        | Map<String,String>   | 它可以获取web.xml中配置的<context-param>上下文参数 |
+
+## 五、JSTL标签库
+
+### (一)简介
+
+1. JSP standrad Tag Library,Jsp标准标签库，是一个不断完善的开源jsp标签库。
+
+2. 主要是为了替换代码脚本，由五个不同功能的标签库组成
+
+   >核心标签库 ----- http://java.sun.com/jsp/jstl/core     ----c
+   >
+   >格式化		------ http://java.sun.com/jsp/jstl/fmt   - -----fmt
+   >
+   >函数             ----- http://java.sun.com/jsp/jstl/functions   ----fn
+   >
+   >数据库		------ http://java.sun.com/jsp/jstl/sql	-----sql
+   >
+   >xml				----- http://java.sun.com/jsp/jstl/xml	-----x
+
+3. 先导入jar包，再用taglib指令引入标签库
+
+   > taglibs-standard-impl-1.2.1.jar
+   >
+   > taglibs-standard-spec-1.2.1.jar
+   >
+   > <%@ taglib prefix="前缀"  uri="uri"%>
+
+### (二)core核心库的使用
+
+1. \<c:set/>往域中保存数据
+
+   1. scope 属性设置保存到哪个域
+          page表示PageContext域（默认值）
+          request表示Request域
+          session表示Session域
+          application表示ServletContext域
+   2. var属性设置key
+   3. value属性设置值
+
+2. \<c:if/>  if判断，test属性表示判断条件，使用EL表达式输出
+
+3. \<c:choose>\<c:when>\<c:otherwise> 多路判断，类似于switch case
+
+4. \<c:foreach>  用于遍历输出
+
+   > begin属性设置开始的索引 end 属性设置结束的索引 var 属性表示循环的变量(也是当前正在遍历到的数据)
+   >
+   > for (Object item: arr) items 表示遍历的数据源（遍历的集合） var 表示当前遍历到的数据
